@@ -1,295 +1,373 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Accounting Solutions Br LTDA — contabilidade e soluções empresariais.">
+  <meta name="theme-color" content="#0b2038">
+  <meta name="description" content="Accounting Solutions Br LTDA — contabilidade e apoio administrativo para empresas e empreendedores em Nova Santa Bárbara, Paraná.">
   <title>Accounting Solutions Br | Contabilidade</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #0c2139;
-      --gold: #e8bd70;
-      --text: #142943;
-      --light: #f7f9fc;
+      --navy: #0b2038;
+      --navy2: #132f4d;
+      --gold: #e8bf78;
+      --gold-light: #f6dca7;
+      --ink: #182d45;
+      --muted: #607086;
+      --pale: #f5f7fa;
+      --line: #e0e6ed;
     }
 
     * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      line-height: 1.6;
+      font-family: "DM Sans", Arial, sans-serif;
+      color: var(--ink);
+      line-height: 1.7;
     }
-
     a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: auto; }
 
-    .container {
-      width: min(1120px, 90%);
-      margin: auto;
+    .topbar {
+      background: #07182b;
+      color: #dce5ee;
+      padding: 8px 0;
+      font-size: 12px;
     }
-
-    header {
-      background: white;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 12px #0000000c;
-    }
-
-    .nav {
-      min-height: 78px;
+    .topbar .container {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
       gap: 12px;
-    }
-
-    .logo {
-      font-family: Georgia, serif;
-      font-size: 42px;
-      font-weight: bold;
-      color: var(--navy);
-    }
-
-    .brand strong { font-size: 19px; }
-
-    .brand small {
-      display: block;
-      font-size: 9px;
-      letter-spacing: 1.4px;
-    }
-
-    nav {
-      display: flex;
-      gap: 22px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    nav a:hover { color: #b78029; }
-
-    .contact {
-      background: var(--navy);
-      color: white;
-      padding: 11px 19px;
-      border-radius: 30px;
-      white-space: nowrap;
-    }
-
-    .hero {
-      background:
-        linear-gradient(90deg, #07182bea, #0c2139ad),
-        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85")
-        center/cover;
-      color: white;
-      padding: 100px 0;
-      min-height: 410px;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-content { max-width: 570px; }
-
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      font-size: clamp(38px, 5vw, 58px);
-      line-height: 1.1;
-      margin: 15px 0;
-    }
-
-    h1 span { color: var(--gold); }
-
-    .hero p {
-      max-width: 450px;
-      margin-bottom: 25px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
-      padding: 13px 23px;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    .btn:hover { filter: brightness(1.07); }
-
-    .values {
-      background: var(--light);
-      padding: 28px 0;
-    }
-
-    .value-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .value h3 { margin: 0 0 5px; font-size: 16px; }
-
-    .value p {
-      margin: 0;
-      font-size: 13px;
-      color: #53647a;
-    }
-
-    .value-icon {
-      font-size: 28px;
-      color: var(--navy);
-    }
-
-    .about { padding: 65px 0 40px; }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .about-image {
-      width: 100%;
-      min-height: 280px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    .section-label {
-      color: #b78029;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    h2 {
-      font-size: 30px;
-      line-height: 1.25;
-      margin: 8px 0 14px;
-    }
-
-    .about-copy p { color: #53647a; }
-
-    .facts {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-      margin-top: 40px;
-    }
-
-    .fact {
-      border-left: 2px solid var(--gold);
-      padding-left: 12px;
-      font-size: 13px;
-      overflow-wrap: anywhere;
-    }
-
-    .fact strong { display: block; margin-bottom: 5px; }
-
-    .services {
-      background: var(--light);
-      padding: 55px 0;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 25px;
-    }
-
-    .service-card {
-      background: white;
-      border: 1px solid #e4e9ef;
-      padding: 25px;
-      border-radius: 12px;
-    }
-
-    .service-card h3 { margin-top: 0; }
-
-    .service-card p {
-      color: #53647a;
-      font-size: 14px;
-    }
-
-    footer {
-      background: var(--navy);
-      color: white;
-      padding: 30px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
       flex-wrap: wrap;
     }
 
-    footer .logo { color: white; }
-
-    footer a { color: var(--gold); }
-
-    .copyright { font-size: 12px; }
-
-    @media (max-width: 800px) {
-      .nav { flex-wrap: wrap; padding: 15px 0; }
-      nav { order: 3; width: 100%; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-      .about-grid { grid-template-columns: 1fr; }
-      .value-grid, .facts { grid-template-columns: repeat(2, 1fr); }
-      .service-grid { grid-template-columns: 1fr; }
-      .hero { padding: 75px 0; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid #edf0f3;
+    }
+    .nav {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      font-family: Georgia, serif;
+      font-size: 44px;
+      color: var(--navy);
+      letter-spacing: -5px;
+      padding-right: 5px;
+    }
+    .brand-name {
+      font-family: Manrope, sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 8px;
+      letter-spacing: 1.3px;
+    }
+    nav { display: flex; gap: 20px; font-size: 13px; font-weight: 700; }
+    nav a:hover { color: #b78029; }
+    .contact-button {
+      background: var(--navy);
+      color: white;
+      border-radius: 30px;
+      padding: 12px 19px;
+      white-space: nowrap;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .menu-button {
+      display: none;
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 20px;
     }
 
-    @media (max-width: 480px) {
-      .brand strong { font-size: 15px; }
-      .brand small { font-size: 7px; }
-      .logo { font-size: 34px; }
-      .value-grid, .facts { grid-template-columns: 1fr; }
-      nav { font-size: 12px; }
-      .contact { font-size: 12px; }
+    .hero {
+      position: relative;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(5,18,32,.96), rgba(7,26,45,.72)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      padding: 95px 0;
+    }
+    .hero-content { max-width: 760px; }
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+    }
+    h1, h2, h3 { font-family: Manrope, sans-serif; }
+    h1 {
+      font-size: clamp(40px, 5.5vw, 66px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin: 20px 0;
+    }
+    h1 span { color: var(--gold-light); }
+    .hero p { max-width: 600px; color: #e2e9f0; font-size: 17px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .btn {
+      display: inline-block;
+      border-radius: 30px;
+      padding: 13px 21px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .btn-gold { background: var(--gold-light); color: var(--navy); }
+    .btn-outline { border: 1px solid #ffffff80; color: white; }
+
+    .benefits { background: var(--pale); padding: 28px 0; }
+    .benefit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .benefit {
+      padding: 10px 16px;
+      border-right: 1px solid var(--line);
+    }
+    .benefit:last-child { border: 0; }
+    .benefit .symbol { font-size: 26px; color: #a77327; }
+    .benefit h3 { font-size: 15px; margin: 5px 0; }
+    .benefit p { font-size: 12px; color: var(--muted); margin: 0; }
+
+    section.content-section { padding: 78px 0; }
+    .section-label {
+      color: #a77327;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+    h2 {
+      font-size: clamp(29px, 3.5vw, 42px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin: 10px 0 16px;
+    }
+    .muted { color: var(--muted); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .about-image {
+      width: 100%;
+      min-height: 340px;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+    .about-copy p { color: #53647a; }
+    .check-list { padding-left: 0; list-style: none; }
+    .check-list li { margin: 10px 0; font-size: 14px; }
+    .check-list li::before { content: "✓"; color: #298257; font-weight: 800; margin-right: 10px; }
+
+    .services { background: var(--pale); }
+    .section-intro { max-width: 740px; margin-bottom: 32px; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .service-card {
+      background: white;
+      border: 1px solid #e7ecf1;
+      border-radius: 15px;
+      padding: 26px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .service-card:hover { transform: translateY(-3px); box-shadow: 0 15px 40px #0b203812; }
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: #f8efdf;
+      color: #805b24;
+      font-size: 23px;
+    }
+    .service-card h3 { font-size: 17px; margin: 17px 0 8px; }
+    .service-card p { color: var(--muted); font-size: 14px; margin: 0; }
+
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+    .step { border-top: 3px solid var(--gold); padding-top: 18px; }
+    .step h3 { font-size: 17px; }
+    .step p { color: var(--muted); font-size: 14px; }
+
+    .company {
+      background: var(--navy);
+      color: white;
+    }
+    .company-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 45px; align-items: center; }
+    .company h2 { font-size: 36px; }
+    .company p { color: #d4dfeb; }
+    .company .section-label { color: var(--gold-light); }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .fact {
+      border: 1px solid #ffffff2b;
+      border-radius: 12px;
+      padding: 16px;
+      overflow-wrap: anywhere;
+    }
+    .fact small {
+      display: block;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 10px;
+      margin-bottom: 5px;
+    }
+    .fact strong { font-size: 13px; }
+
+    .faq { background: var(--pale); }
+    .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 45px; }
+    details {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      padding: 16px 19px;
+      margin-bottom: 10px;
+    }
+    summary { cursor: pointer; font-weight: 700; font-size: 14px; }
+    details p { color: var(--muted); font-size: 14px; margin-bottom: 0; }
+
+    .contact-section { background: #fbf7ef; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .contact-list { display: grid; gap: 12px; margin-top: 25px; }
+    .contact-item {
+      background: white;
+      padding: 16px;
+      border: 1px solid #eee7db;
+      border-radius: 12px;
+    }
+    .contact-item strong { display: block; font-size: 13px; }
+    .contact-item span { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+    .contact-form {
+      background: white;
+      padding: 25px;
+      border: 1px solid #eee7db;
+      border-radius: 16px;
+    }
+    .contact-form h3 { margin-top: 0; }
+    .field { margin: 13px 0; }
+    .field label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 5px; }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #dbe2e9;
+      border-radius: 8px;
+      font: inherit;
+      font-size: 14px;
+      background: white;
+    }
+    .field textarea { min-height: 100px; resize: vertical; }
+    .submit {
+      width: 100%;
+      background: var(--navy);
+      color: white;
+      border: 0;
+      border-radius: 8px;
+      padding: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .form-note { font-size: 11px; color: var(--muted); }
+
+    footer { background: #07182b; color: white; padding: 30px 0 18px; }
+    .footer-grid { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+    footer .brand-mark { color: white; }
+    footer .brand-name { color: white; }
+    footer .brand small { color: #b7c4d1; }
+    footer p, footer a { font-size: 13px; color: #d0d9e3; }
+    footer a:hover { color: var(--gold-light); }
+    .copyright { border-top: 1px solid #ffffff20; margin-top: 25px; padding-top: 16px; font-size: 11px; color: #aebbc9; }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 20;
+      background: #16865b;
+      color: white;
+      border-radius: 30px;
+      padding: 13px 18px;
+      box-shadow: 0 8px 25px #0003;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .nav { flex-wrap: wrap; padding: 12px 0; }
+      .menu-button { display: block; }
+      .contact-button { margin-left: auto; }
+      nav { display: none; width: 100%; order: 5; flex-direction: column; gap: 0; }
+      nav.open { display: flex; }
+      nav a { padding: 10px 0; border-top: 1px solid var(--line); }
+      .about-grid, .company-grid, .faq-grid, .contact-grid { grid-template-columns: 1fr; }
+      .benefit-grid { grid-template-columns: 1fr 1fr; }
+      .benefit:nth-child(2) { border: 0; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .container { width: calc(100% - 30px); }
+      .brand-name { font-size: 14px; }
+      .brand small { font-size: 7px; letter-spacing: .8px; }
+      .brand-mark { font-size: 36px; }
+      .topbar .container { justify-content: center; }
+      .hero { padding: 70px 0; }
+      h1 { font-size: 42px; }
+      .actions .btn { width: 100%; text-align: center; }
+      .benefit-grid, .service-grid, .steps, .facts { grid-template-columns: 1fr; }
+      .benefit { border: 0; padding: 8px 0; }
+      .about-image { min-height: 250px; }
+      .company h2 { font-size: 30px; }
+      .contact-form { padding: 18px; }
+      .whatsapp-float { right: 12px; bottom: 12px; }
     }
   </style>
 </head>
 <body>
 
+<div class="topbar">
+  <div class="container">
+    <span>Contabilidade e soluções empresariais</span>
+    <span>Nova Santa Bárbara – PR · <a href="mailto:dervishiiigazmirr@gmail.com">E-mail</a></span>
+  </div>
+</div>
+
 <header>
   <div class="container nav">
     <a class="brand" href="#inicio">
-      <span class="logo">AS</span>
+      <span class="brand-mark">AS</span>
       <span>
-        <strong>Accounting Solutions Br</strong>
+        <span class="brand-name">Accounting Solutions Br</span>
         <small>CONTABILIDADE E SOLUÇÕES EMPRESARIAIS</small>
       </span>
     </a>
-
-    <nav>
+    <button class="menu-button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav id="navigation">
       <a href="#inicio">Início</a>
-      <a href="#sobre">Sobre Nós</a>
+      <a href="#sobre">Sobre nós</a>
       <a href="#servicos">Serviços</a>
       <a href="#diferenciais">Diferenciais</a>
+      <a href="#duvidas">Dúvidas</a>
       <a href="#contato">Contato</a>
     </nav>
-
-    <a class="contact" href="https://wa.me/5543998695002" target="_blank" rel="noopener">
-      Fale Conosco
-    </a>
+    <a class="contact-button" href="https://wa.me/5543998695002" target="_blank" rel="noopener">Fale conosco ↗</a>
   </div>
 </header>
 
@@ -297,160 +375,295 @@
   <section class="hero" id="inicio">
     <div class="container hero-content">
       <div class="eyebrow">Accounting Solutions Br LTDA</div>
-      <h1>Sua empresa em<br><span>boas mãos.</span></h1>
+      <h1>Mais clareza para seus números. <span>Mais confiança para crescer.</span></h1>
       <p>
-        Oferecemos soluções contábeis completas para que você possa
-        focar no que realmente importa: o crescimento do seu negócio.
+        Soluções contábeis e apoio administrativo para empresas e empreendedores.
+        Trabalhamos para tornar as informações do seu negócio mais organizadas,
+        compreensíveis e úteis para o dia a dia.
       </p>
-      <a class="btn" href="#servicos">Conheça nossos serviços →</a>
+      <div class="actions">
+        <a class="btn btn-gold" href="#servicos">Conheça nossos serviços →</a>
+        <a class="btn btn-outline" href="https://wa.me/5543998695002" target="_blank" rel="noopener">Fale com nossa equipe</a>
+      </div>
     </div>
   </section>
 
-  <section class="values" id="diferenciais">
-    <div class="container value-grid">
-      <article class="value">
-        <div class="value-icon">♢</div>
-        <div>
-          <h3>Segurança</h3>
-          <p>Seus dados e informações sempre protegidos.</p>
-        </div>
-      </article>
-
-      <article class="value">
-        <div class="value-icon">↗</div>
-        <div>
-          <h3>Transparência</h3>
-          <p>Comunicação clara e relacionamento de confiança.</p>
-        </div>
-      </article>
-
-      <article class="value">
-        <div class="value-icon">♧</div>
-        <div>
-          <h3>Compromisso</h3>
-          <p>Seu sucesso é o nosso maior resultado.</p>
-        </div>
-      </article>
-
-      <article class="value">
-        <div class="value-icon">◷</div>
-        <div>
-          <h3>Agilidade</h3>
-          <p>Soluções rápidas para o seu dia a dia.</p>
-        </div>
-      </article>
+  <section class="benefits" id="diferenciais">
+    <div class="container benefit-grid">
+      <article class="benefit"><div class="symbol">◇</div><h3>Segurança</h3><p>Atenção às informações e às rotinas do negócio.</p></article>
+      <article class="benefit"><div class="symbol">↗</div><h3>Transparência</h3><p>Comunicação clara para apoiar suas decisões.</p></article>
+      <article class="benefit"><div class="symbol">◎</div><h3>Compromisso</h3><p>Relacionamento profissional e responsável.</p></article>
+      <article class="benefit"><div class="symbol">◷</div><h3>Organização</h3><p>Apoio para estruturar documentos e processos.</p></article>
     </div>
   </section>
 
-  <section class="about container" id="sobre">
-    <div class="about-grid">
-      <img
-        class="about-image"
-        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=85"
-        alt="Profissionais trabalhando com documentos e planejamento empresarial"
-        loading="lazy"
-      >
-
-      <div class="about-copy">
-        <div class="section-label">Sobre nós</div>
-        <h2>Accounting Solutions Br LTDA</h2>
+  <section class="content-section" id="sobre">
+    <div class="container about-grid">
+      <img class="about-image"
+        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=85"
+        alt="Profissional analisando documentos e informações empresariais" loading="lazy">
+      <div>
+        <div class="section-label">Sobre a empresa</div>
+        <h2>Seu negócio merece informações claras e uma parceria de confiança.</h2>
         <p>
-          Somos uma empresa de contabilidade fundada em 04/05/2022,
-          com sede em Nova Santa Bárbara – PR, especializada em oferecer
-          soluções contábeis e administrativas para empresas e empreendedores.
+          A <strong>Accounting Solutions Br LTDA</strong> é uma empresa do segmento
+          contábil, fundada em 4 de maio de 2022 e localizada em Nova Santa Bárbara,
+          no Paraná. Sua atividade principal é a prestação de serviços de contabilidade,
+          com atuação secundária em serviços combinados de escritório e apoio administrativo.
         </p>
         <p>
-          Nosso objetivo é simplificar a gestão financeira e tributária
-          do seu negócio, com atendimento próximo, personalizado e de
-          acordo com a sua realidade.
+          Nosso objetivo é apoiar empresas e empreendedores na organização de suas
+          rotinas, na compreensão de informações contábeis e fiscais e no encaminhamento
+          das demandas administrativas. Acreditamos que um atendimento de qualidade
+          começa com escuta, clareza e atenção às necessidades de cada cliente.
         </p>
-      </div>
-    </div>
-
-    <div class="facts">
-      <div class="fact">
-        <strong>CNPJ</strong>
-        46.259.379/0001-50
-      </div>
-
-      <div class="fact">
-        <strong>Endereço</strong>
-        Rua José Mendes Moraes, 45<br>
-        Centro – Nova Santa Bárbara/PR
-      </div>
-
-      <div class="fact">
-        <strong>Sócio-Administrador</strong>
-        Fernando Marcelo de Faria
-      </div>
-
-      <div class="fact">
-        <strong>Atividade Principal</strong>
-        69.20-6-01 – Atividades de contabilidade
+        <ul class="check-list">
+          <li>Comunicação acessível e atendimento profissional</li>
+          <li>Orientação de acordo com a realidade de cada empresa</li>
+          <li>Apoio à organização contábil e administrativa</li>
+          <li>Responsabilidade e atenção aos detalhes</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="services" id="servicos">
+  <section class="content-section services" id="servicos">
     <div class="container">
-      <div class="section-label">Nossas soluções</div>
-      <h2>Como podemos ajudar sua empresa?</h2>
-      <p>
-        Soluções contábeis e administrativas para apoiar a organização
-        e o crescimento do seu negócio.
-      </p>
+      <div class="section-intro">
+        <div class="section-label">Áreas de atuação</div>
+        <h2>Soluções para diferentes necessidades empresariais</h2>
+        <p class="muted">
+          Conheça áreas relacionadas ao nosso segmento. A disponibilidade e o escopo
+          de cada serviço devem ser confirmados diretamente com a empresa, conforme
+          a necessidade e a situação de cada cliente.
+        </p>
+      </div>
 
       <div class="service-grid">
         <article class="service-card">
-          <h3>Contabilidade</h3>
-          <p>
-            Apoio contábil para ajudar sua empresa a manter suas
-            informações financeiras organizadas.
-          </p>
+          <div class="service-icon">▤</div>
+          <h3>Contabilidade empresarial</h3>
+          <p>Apoio na organização de registros e informações contábeis para acompanhar a situação do negócio e apoiar a gestão.</p>
         </article>
-
         <article class="service-card">
-          <h3>Orientação tributária</h3>
-          <p>
-            Orientação sobre rotinas fiscais e obrigações tributárias,
-            conforme o enquadramento da sua empresa.
-          </p>
+          <div class="service-icon">▧</div>
+          <h3>Rotinas fiscais e tributárias</h3>
+          <p>Organização de informações e orientação sobre obrigações fiscais aplicáveis, de acordo com o enquadramento da empresa.</p>
         </article>
-
         <article class="service-card">
+          <div class="service-icon">▦</div>
           <h3>Apoio administrativo</h3>
-          <p>
-            Suporte às rotinas administrativas para facilitar
-            a organização do dia a dia empresarial.
-          </p>
+          <p>Suporte às rotinas de escritório, organização de documentos e estruturação de processos administrativos.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">⌁</div>
+          <h3>Organização financeira</h3>
+          <p>Apoio na organização de dados financeiros para facilitar o acompanhamento de receitas, despesas e informações gerenciais.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">▣</div>
+          <h3>Documentação empresarial</h3>
+          <p>Ajuda na organização e conferência de documentos relacionados às rotinas da empresa e às demandas administrativas.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">↗</div>
+          <h3>Orientação ao empreendedor</h3>
+          <p>Atendimento inicial para compreender necessidades, esclarecer dúvidas e identificar informações importantes para cada demanda.</p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="como-funciona">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-label">Como começar</div>
+        <h2>Um atendimento organizado, passo a passo</h2>
+        <p class="muted">Uma comunicação objetiva ajuda a compreender a sua necessidade e identificar os próximos passos.</p>
+      </div>
+      <div class="steps">
+        <article class="step"><h3>1. Conte sua necessidade</h3><p>Explique brevemente sua atividade, o momento da empresa e a dúvida que deseja resolver.</p></article>
+        <article class="step"><h3>2. Reúna as informações</h3><p>Identifique com a equipe quais dados e documentos são necessários para analisar a demanda.</p></article>
+        <article class="step"><h3>3. Alinhe os próximos passos</h3><p>Confirme o escopo do serviço, os prazos e as condições diretamente com a empresa.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section company" id="dados">
+    <div class="container company-grid">
+      <div>
+        <div class="section-label">Perfil empresarial</div>
+        <h2>Conheça a Accounting Solutions Br</h2>
+        <p>
+          Empresa sediada em Nova Santa Bárbara, Paraná, com atividade principal
+          no segmento de contabilidade e atividade secundária de apoio administrativo.
+          Os dados abaixo foram organizados a partir das informações fornecidas.
+        </p>
+        <a class="btn btn-gold" href="#contato">Entre em contato →</a>
+      </div>
+      <div class="facts">
+        <div class="fact"><small>Razão social</small><strong>Accounting Solutions Br LTDA</strong></div>
+        <div class="fact"><small>Nome fantasia</small><strong>Accounting Solutions Br</strong></div>
+        <div class="fact"><small>CNPJ</small><strong>46.259.379/0001-50</strong></div>
+        <div class="fact"><small>Abertura informada</small><strong>04/05/2022</strong></div>
+        <div class="fact"><small>CRC informado</small><strong>PR012035O</strong></div>
+        <div class="fact"><small>Porte informado</small><strong>Microempresa</strong></div>
+        <div class="fact"><small>Atividade principal</small><strong>69.20-6-01 — Atividades de contabilidade</strong></div>
+        <div class="fact"><small>Atividade secundária</small><strong>82.11-3-00 — Serviços combinados de escritório e apoio administrativo</strong></div>
+        <div class="fact"><small>Sócio-administrador</small><strong>Fernando Marcelo de Faria</strong></div>
+        <div class="fact"><small>Endereço</small><strong>Rua José Mendes Moraes, 45, Centro, Nova Santa Bárbara/PR — CEP 86250-000</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section faq" id="duvidas">
+    <div class="container faq-grid">
+      <div>
+        <div class="section-label">Perguntas frequentes</div>
+        <h2>Informações para começar</h2>
+        <p class="muted">Veja algumas respostas úteis antes de entrar em contato com a equipe.</p>
+      </div>
+      <div>
+        <details>
+          <summary>Quem pode entrar em contato?</summary>
+          <p>Empresas e empreendedores que buscam informações sobre contabilidade ou apoio administrativo podem apresentar sua necessidade e confirmar quais serviços são adequados ao caso.</p>
+        </details>
+        <details>
+          <summary>O que devo informar no primeiro contato?</summary>
+          <p>Se possível, informe a atividade da empresa, o CNPJ e uma descrição breve da dúvida. Não envie senhas ou dados confidenciais por canais não seguros.</p>
+        </details>
+        <details>
+          <summary>Como solicitar atendimento?</summary>
+          <p>Você pode enviar um e-mail ou iniciar uma conversa pelo WhatsApp usando os contatos desta página.</p>
+        </details>
+        <details>
+          <summary>Os serviços são iguais para todas as empresas?</summary>
+          <p>As necessidades dependem da atividade, do porte e da situação de cada negócio. Confirme diretamente com a empresa o escopo e as condições do atendimento.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section contact-section" id="contato">
+    <div class="container contact-grid">
+      <div>
+        <div class="section-label">Fale conosco</div>
+        <h2>Vamos conversar sobre sua empresa?</h2>
+        <p class="muted">Entre em contato para apresentar sua dúvida ou solicitar informações sobre os serviços contábeis e administrativos.</p>
+        <div class="contact-list">
+          <a class="contact-item" href="https://wa.me/5543998695002" target="_blank" rel="noopener">
+            <strong>WhatsApp / Telefone</strong><span>(43) 99869-5002</span>
+          </a>
+          <a class="contact-item" href="mailto:dervishiiigazmirr@gmail.com">
+            <strong>E-mail</strong><span>dervishiiigazmirr@gmail.com</span>
+          </a>
+          <div class="contact-item">
+            <strong>Endereço</strong><span>Rua José Mendes Moraes, 45, Centro<br>Nova Santa Bárbara – PR · CEP 86250-000</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <h3>Envie sua mensagem</h3>
+        <p class="muted">Preencha os campos para preparar uma mensagem no WhatsApp.</p>
+        <div class="field">
+          <label for="nome">Seu nome</label>
+          <input id="nome" name="nome" autocomplete="name" required placeholder="Digite seu nome">
+        </div>
+        <div class="field">
+          <label for="empresa">Empresa (opcional)</label>
+          <input id="empresa" name="empresa" autocomplete="organization" placeholder="Nome da sua empresa">
+        </div>
+        <div class="field">
+          <label for="assunto">Assunto</label>
+          <select id="assunto" name="assunto" required>
+            <option value="">Selecione uma opção</option>
+            <option>Serviços contábeis</option>
+            <option>Questões fiscais e tributárias</option>
+            <option>Apoio administrativo</option>
+            <option>Documentação empresarial</option>
+            <option>Outra dúvida</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" required placeholder="Como podemos ajudar?"></textarea>
+        </div>
+        <button class="submit" type="submit">Continuar pelo WhatsApp →</button>
+        <p class="form-note">O formulário abre o WhatsApp com a mensagem preenchida. Nenhum dado é armazenado neste site.</p>
+      </form>
     </div>
   </section>
 </main>
 
-<footer id="contato">
-  <div class="container footer-inner">
-    <div class="brand">
-      <span class="logo">AS</span>
-      <span>
-        <strong>Accounting Solutions Br</strong>
-        <small>CONTABILIDADE E SOLUÇÕES EMPRESARIAIS</small>
-      </span>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#inicio">
+          <span class="brand-mark">AS</span>
+          <span><span class="brand-name">Accounting Solutions Br</span><small>CONTABILIDADE E SOLUÇÕES EMPRESARIAIS</small></span>
+        </a>
+        <p>Contabilidade e apoio administrativo para empresas e empreendedores.</p>
+      </div>
+      <div>
+        <strong>Explore</strong>
+        <p><a href="#sobre">Sobre nós</a></p>
+        <p><a href="#servicos">Serviços</a></p>
+        <p><a href="#duvidas">Perguntas frequentes</a></p>
+      </div>
+      <div>
+        <strong>Contato</strong>
+        <p><a href="https://wa.me/5543998695002" target="_blank" rel="noopener">WhatsApp</a></p>
+        <p><a href="mailto:dervishiiigazmirr@gmail.com">E-mail</a></p>
+        <p>Nova Santa Bárbara – PR</p>
+      </div>
     </div>
-
-    <div>
-      <p><a href="https://wa.me/5543998695002" target="_blank" rel="noopener">WhatsApp</a></p>
-      <p><a href="mailto:dervishiiigazmirr@gmail.com">Enviar e-mail</a></p>
-      <p>Nova Santa Bárbara – PR</p>
-    </div>
-
     <div class="copyright">
-      © 2026 Accounting Solutions Br LTDA.<br>
-      Todos os direitos reservados.
+      © <span id="year">2026</span> Accounting Solutions Br LTDA. Todos os direitos reservados.
+      · CNPJ 46.259.379/0001-50
     </div>
   </div>
 </footer>
+
+<a class="whatsapp-float" href="https://wa.me/5543998695002" target="_blank" rel="noopener">☏ &nbsp; WhatsApp</a>
+
+<script>
+  const menuButton = document.querySelector('.menu-button');
+  const navigation = document.querySelector('#navigation');
+
+  menuButton.addEventListener('click', () => {
+    const open = navigation.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.textContent = open ? '×' : '☰';
+  });
+
+  navigation.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navigation.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.textContent = '☰';
+    });
+  });
+
+  document.querySelector('#year').textContent = new Date().getFullYear();
+
+  document.querySelector('#contactForm').addEventListener('submit', event => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const message =
+      `Olá! Meu nome é ${data.get('nome')}.\\n` +
+      `Empresa: ${data.get('empresa') || 'Não informada'}\\n` +
+      `Assunto: ${data.get('assunto')}\\n` +
+      `Mensagem: ${data.get('mensagem')}`;
+
+    window.open(
+      'https://wa.me/5543998695002?text=' + encodeURIComponent(message),
+      '_blank',
+      'noopener'
+    );
+  });
+</script>
 
 </body>
 </html>
